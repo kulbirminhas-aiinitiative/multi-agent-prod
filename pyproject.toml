@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "multi-agent-service"
+version = "1.0.0"
+description = "Multi-agent orchestration service"
+authors = ["Maestro Platform"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.109.0"
+uvicorn = "^0.27.0"
+pydantic = "^2.5.0"
+pydantic-settings = "^2.1.0"
+redis = "^5.0.0"
+httpx = "^0.26.0"
+pyyaml = "^6.0"
+python-dotenv = "^1.0.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+pytest-asyncio = "^0.21.0"
+black = "^23.7.0"
+flake8 = "^6.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 100
+target-version = ['py311']
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
